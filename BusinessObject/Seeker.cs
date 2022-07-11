@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BusinessObject
 {
-    public partial class Seeker
+    public partial class Seeker: User
     {
         public Seeker()
         {
