@@ -1,6 +1,6 @@
 ﻿namespace FreelanceApp
 {
-    partial class FormCreateProposal
+    partial class FormProposalDetail
     {
         /// <summary>
         /// Required designer variable.

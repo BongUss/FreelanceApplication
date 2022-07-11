@@ -28,61 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.postAJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewListPostedJob = new System.Windows.Forms.DataGridView();
+            this.buttonPostAJob = new System.Windows.Forms.Button();
+            this.dataGridViewAcceptedJob = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPostedJob)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceptedJob)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // dataGridViewListPostedJob
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.postAJobToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1074, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.dataGridViewListPostedJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListPostedJob.Location = new System.Drawing.Point(22, 143);
+            this.dataGridViewListPostedJob.Name = "dataGridViewListPostedJob";
+            this.dataGridViewListPostedJob.ReadOnly = true;
+            this.dataGridViewListPostedJob.RowTemplate.Height = 25;
+            this.dataGridViewListPostedJob.Size = new System.Drawing.Size(575, 368);
+            this.dataGridViewListPostedJob.TabIndex = 1;
             // 
-            // postAJobToolStripMenuItem
+            // buttonPostAJob
             // 
-            this.postAJobToolStripMenuItem.Name = "postAJobToolStripMenuItem";
-            this.postAJobToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.postAJobToolStripMenuItem.Text = "Post a job";
+            this.buttonPostAJob.Location = new System.Drawing.Point(504, 26);
+            this.buttonPostAJob.Name = "buttonPostAJob";
+            this.buttonPostAJob.Size = new System.Drawing.Size(75, 23);
+            this.buttonPostAJob.TabIndex = 2;
+            this.buttonPostAJob.Text = "Post A Job";
+            this.buttonPostAJob.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewAcceptedJob
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(575, 368);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewAcceptedJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAcceptedJob.Location = new System.Drawing.Point(55, 184);
+            this.dataGridViewAcceptedJob.Name = "dataGridViewAcceptedJob";
+            this.dataGridViewAcceptedJob.ReadOnly = true;
+            this.dataGridViewAcceptedJob.RowTemplate.Height = 25;
+            this.dataGridViewAcceptedJob.Size = new System.Drawing.Size(575, 368);
+            this.dataGridViewAcceptedJob.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(834, 216);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "View Accepted Job";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(834, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "View Posted Job";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormHirerdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 532);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(1074, 620);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonPostAJob);
+            this.Controls.Add(this.dataGridViewAcceptedJob);
+            this.Controls.Add(this.dataGridViewListPostedJob);
             this.Name = "FormHirerdashboard";
             this.Text = "FormHirerdashboard";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPostedJob)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceptedJob)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem postAJobToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewListPostedJob;
+        private System.Windows.Forms.Button buttonPostAJob;
+        private System.Windows.Forms.DataGridView dataGridViewAcceptedJob;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

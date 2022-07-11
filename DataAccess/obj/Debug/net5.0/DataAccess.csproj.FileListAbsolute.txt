@@ -1,0 +1,12 @@
+D:\github\FreelanceApplication\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+D:\github\FreelanceApplication\DataAccess\bin\Debug\net5.0\DataAccess.dll
+D:\github\FreelanceApplication\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.dll
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll

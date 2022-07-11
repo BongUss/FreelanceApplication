@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FreelanceApp
 {
-    public partial class FormCreateProposal : Form
+    public partial class FormProposalDetail : Form
     {
-        public FormCreateProposal()
+        public FormProposalDetail()
         {
             InitializeComponent();
         }
