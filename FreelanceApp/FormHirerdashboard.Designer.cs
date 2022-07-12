@@ -32,7 +32,7 @@
             this.buttonPostAJob = new System.Windows.Forms.Button();
             this.dataGridViewAcceptedJob = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonViewPostedJob = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPostedJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceptedJob)).BeginInit();
             this.SuspendLayout();
@@ -75,21 +75,22 @@
             this.button1.Text = "View Accepted Job";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonViewPostedJob
             // 
-            this.button2.Location = new System.Drawing.Point(834, 121);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "View Posted Job";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonViewPostedJob.Location = new System.Drawing.Point(834, 121);
+            this.buttonViewPostedJob.Name = "buttonViewPostedJob";
+            this.buttonViewPostedJob.Size = new System.Drawing.Size(159, 23);
+            this.buttonViewPostedJob.TabIndex = 2;
+            this.buttonViewPostedJob.Text = "View Posted Job";
+            this.buttonViewPostedJob.UseVisualStyleBackColor = true;
+            this.buttonViewPostedJob.Click += new System.EventHandler(this.buttonViewPostedJob_Click);
             // 
             // FormHirerdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 620);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonViewPostedJob);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonPostAJob);
             this.Controls.Add(this.dataGridViewAcceptedJob);
@@ -107,6 +108,6 @@
         private System.Windows.Forms.Button buttonPostAJob;
         private System.Windows.Forms.DataGridView dataGridViewAcceptedJob;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonViewPostedJob;
     }
 }
