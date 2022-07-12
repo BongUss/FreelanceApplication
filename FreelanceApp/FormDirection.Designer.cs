@@ -41,6 +41,7 @@
             this.buttonCreateHirer.TabIndex = 0;
             this.buttonCreateHirer.Text = "Hier";
             this.buttonCreateHirer.UseVisualStyleBackColor = true;
+            this.buttonCreateHirer.Click += new System.EventHandler(this.buttonCreateHirer_Click);
             // 
             // buttonCreateSeeker
             // 

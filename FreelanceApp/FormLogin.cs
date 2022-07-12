@@ -16,5 +16,12 @@ namespace FreelanceApp
         {
             InitializeComponent();
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            FormDirection FormDirection = new FormDirection();
+            FormDirection.ShowDialog();
+           
+        }
     }
 }

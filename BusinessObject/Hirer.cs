@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BusinessObject
 {
-    public partial class Hirer
+    public partial class Hirer : User
     {
         public Hirer()
         {
@@ -14,7 +14,6 @@ namespace BusinessObject
 
         public int HirerId { get; set; }
         public string CompanyName { get; set; }
-
         public virtual User HirerNavigation { get; set; }
         public virtual ICollection<Project> Projects { get; set; }
     }
