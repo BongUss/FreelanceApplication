@@ -17,7 +17,7 @@ namespace FreelanceApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormRegisterSeeker());
+            Application.Run(new FormSeekerDashboard());
         }
     }
 }
