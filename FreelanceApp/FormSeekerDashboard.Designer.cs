@@ -30,7 +30,7 @@
         {
             this.dataGridViewListJob = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePickerCreateDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpCreateday = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,17 +39,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.txtPaymentAmount = new System.Windows.Forms.TextBox();
+            this.txtMajor = new System.Windows.Forms.TextBox();
+            this.txtComplexity = new System.Windows.Forms.TextBox();
+            this.txtProjectName = new System.Windows.Forms.TextBox();
             this.dataGridViewListProposal = new System.Windows.Forms.DataGridView();
             this.dataGridViewReceivedJobList = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.btViewListJob = new System.Windows.Forms.Button();
+            this.dtpExpedtedDay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).BeginInit();
@@ -63,6 +63,7 @@
             this.dataGridViewListJob.RowTemplate.Height = 25;
             this.dataGridViewListJob.Size = new System.Drawing.Size(481, 289);
             this.dataGridViewListJob.TabIndex = 0;
+            this.dataGridViewListJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListJob_CellClick);
             // 
             // button1
             // 
@@ -73,12 +74,12 @@
             this.button1.Text = "View submited proposal";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePickerCreateDate
+            // dtpCreateday
             // 
-            this.dateTimePickerCreateDate.Location = new System.Drawing.Point(452, 128);
-            this.dateTimePickerCreateDate.Name = "dateTimePickerCreateDate";
-            this.dateTimePickerCreateDate.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerCreateDate.TabIndex = 51;
+            this.dtpCreateday.Location = new System.Drawing.Point(452, 128);
+            this.dtpCreateday.Name = "dtpCreateday";
+            this.dtpCreateday.Size = new System.Drawing.Size(200, 23);
+            this.dtpCreateday.TabIndex = 51;
             // 
             // label8
             // 
@@ -128,7 +129,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(360, 134);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
@@ -153,54 +153,47 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Project name";
             // 
-            // textBox9
+            // txtDescription
             // 
-            this.textBox9.Location = new System.Drawing.Point(128, 52);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 23);
-            this.textBox9.TabIndex = 42;
+            this.txtDescription.Location = new System.Drawing.Point(128, 52);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(100, 23);
+            this.txtDescription.TabIndex = 42;
             // 
-            // textBox8
+            // txtLocation
             // 
-            this.textBox8.Location = new System.Drawing.Point(128, 86);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 23);
-            this.textBox8.TabIndex = 41;
+            this.txtLocation.Location = new System.Drawing.Point(128, 86);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(100, 23);
+            this.txtLocation.TabIndex = 41;
             // 
-            // textBox7
+            // txtPaymentAmount
             // 
-            this.textBox7.Location = new System.Drawing.Point(128, 125);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 23);
-            this.textBox7.TabIndex = 40;
+            this.txtPaymentAmount.Location = new System.Drawing.Point(128, 125);
+            this.txtPaymentAmount.Name = "txtPaymentAmount";
+            this.txtPaymentAmount.Size = new System.Drawing.Size(100, 23);
+            this.txtPaymentAmount.TabIndex = 40;
             // 
-            // textBox5
+            // txtMajor
             // 
-            this.textBox5.Location = new System.Drawing.Point(452, 89);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 39;
+            this.txtMajor.Location = new System.Drawing.Point(452, 12);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(100, 23);
+            this.txtMajor.TabIndex = 38;
             // 
-            // textBox3
+            // txtComplexity
             // 
-            this.textBox3.Location = new System.Drawing.Point(452, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 38;
+            this.txtComplexity.Location = new System.Drawing.Point(452, 52);
+            this.txtComplexity.Name = "txtComplexity";
+            this.txtComplexity.Size = new System.Drawing.Size(100, 23);
+            this.txtComplexity.TabIndex = 37;
             // 
-            // textBox2
+            // txtProjectName
             // 
-            this.textBox2.Location = new System.Drawing.Point(452, 52);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 37;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 36;
+            this.txtProjectName.Location = new System.Drawing.Point(128, 12);
+            this.txtProjectName.Name = "txtProjectName";
+            this.txtProjectName.Size = new System.Drawing.Size(100, 23);
+            this.txtProjectName.TabIndex = 36;
             // 
             // dataGridViewListProposal
             // 
@@ -241,15 +234,23 @@
             this.btViewListJob.UseVisualStyleBackColor = true;
             this.btViewListJob.Click += new System.EventHandler(this.btViewListJob_Click);
             // 
+            // dtpExpedtedDay
+            // 
+            this.dtpExpedtedDay.Location = new System.Drawing.Point(452, 89);
+            this.dtpExpedtedDay.Name = "dtpExpedtedDay";
+            this.dtpExpedtedDay.Size = new System.Drawing.Size(200, 23);
+            this.dtpExpedtedDay.TabIndex = 55;
+            // 
             // FormSeekerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 569);
+            this.Controls.Add(this.dtpExpedtedDay);
             this.Controls.Add(this.dataGridViewReceivedJobList);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridViewListProposal);
-            this.Controls.Add(this.dateTimePickerCreateDate);
+            this.Controls.Add(this.dtpCreateday);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -258,13 +259,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtLocation);
+            this.Controls.Add(this.txtPaymentAmount);
+            this.Controls.Add(this.txtMajor);
+            this.Controls.Add(this.txtComplexity);
+            this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.btViewListJob);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewListJob);
@@ -283,7 +283,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewListJob;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCreateDate;
+        private System.Windows.Forms.DateTimePicker dtpCreateday;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -292,16 +292,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.TextBox txtPaymentAmount;
+        private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.TextBox txtComplexity;
+        private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.DataGridView dataGridViewListProposal;
         private System.Windows.Forms.DataGridView dataGridViewReceivedJobList;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btViewListJob;
+        private System.Windows.Forms.DateTimePicker dtpExpedtedDay;
     }
 }
