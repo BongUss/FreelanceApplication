@@ -31,6 +31,51 @@ namespace DataAccess
             }
         }
 
+        public List<Hirer> getListHirer()
+        {
+            List<Hirer> ListHirer = new List<Hirer>();
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "SELECT U.UserID, U.userName, U.password, U.balance, U.Phone, U.location, H.hirerID, H.companyName FROM[User] U, Hirer H WHERE U.UserID = H.HirerID";
+                    commad = new SqlCommand(sql, connect);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            ListHirer.Add(new Hirer
+                            {
+                                UserId = reader.GetInt32(0),
+                                UserName = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Balance = reader.GetDecimal(3),
+                                Phone = reader.GetString(4),
+                                Location = reader.GetString(5),
+                                HirerId = reader.GetInt32(6),
+                                CompanyName = reader.GetString(7),
+                                
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return ListHirer;
+        }
+
+       
+
         public bool createUser(Seeker user)
         {
             bool check = false;

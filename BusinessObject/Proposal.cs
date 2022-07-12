@@ -11,6 +11,8 @@ namespace BusinessObject
         public int ProjectId { get; set; }
         public int SeekerId { get; set; }
         public decimal? PaymentAmount { get; set; }
+
+        public string? Message { get; set; }
         public string Status { get; set; }
         public DateTime? CreatedDate { get; set; }
 

@@ -16,5 +16,9 @@ namespace DataAccess.repository
         public bool createUser(Hirer Hirer) => UserDAO.Instance.createUser1(Hirer);
 
         public int getHirerId(Hirer Hirer) => UserDAO.Instance.getHirerId(Hirer);
+
+        public List<Hirer> GetHirers() => UserDAO.Instance.getListHirer();
+
+
     }
 }

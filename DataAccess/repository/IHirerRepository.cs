@@ -14,5 +14,7 @@ namespace DataAccess.repository
         bool createUser(Hirer user);
         int getHirerId(Hirer Hirer);
         bool checkDuplicateuserName(string UserName);
+
+        List<Hirer> GetHirers();
     }
 }
