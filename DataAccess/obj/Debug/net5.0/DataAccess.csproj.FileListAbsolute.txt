@@ -40,3 +40,6 @@ D:\github3\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.dll
 D:\github3\FreelanceApplication\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
 D:\github3\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 D:\github3\FreelanceApplication\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+D:\github\FreelanceApplication\DataAccess\bin\Debug\net5.0\BusinessObject.dll
+D:\github\FreelanceApplication\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
+D:\github\FreelanceApplication\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete

@@ -28,5 +28,12 @@ namespace FreelanceApp
             FormRegisterHirer FormRegisterHirer = new FormRegisterHirer();
             FormRegisterHirer.ShowDialog();
         }
+
+        private void buttonCreateSeeker_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormRegisterSeeker FormRegisterSeeker = new FormRegisterSeeker();
+            FormRegisterSeeker.ShowDialog();
+        }
     }
 }

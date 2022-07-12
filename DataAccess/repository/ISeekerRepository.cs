@@ -13,5 +13,7 @@ namespace DataAccess.repository
         bool createUser(Seeker user);
         int getSeekerId(Seeker seeker);
         bool checkDuplicateuserName(string seeker);
+
+        List<Seeker> GetSeekers();
     }
 }

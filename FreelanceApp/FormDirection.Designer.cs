@@ -51,6 +51,7 @@
             this.buttonCreateSeeker.TabIndex = 1;
             this.buttonCreateSeeker.Text = "Seeker";
             this.buttonCreateSeeker.UseVisualStyleBackColor = true;
+            this.buttonCreateSeeker.Click += new System.EventHandler(this.buttonCreateSeeker_Click);
             // 
             // label1
             // 

@@ -15,6 +15,10 @@ namespace FreelanceApp
     {
         IUserRepository UserRepository = new UserRepository();
         IHirerRepository HirerRepository = new HirerRepository();
+        ISeekerRepository SeekerRepository = new SeekerRepository();
+
+
+
 
         public FormLogin()
         {
@@ -34,14 +38,17 @@ namespace FreelanceApp
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             var Hirers = HirerRepository.GetHirers();
+            var Seekers = SeekerRepository.GetSeekers();
             //var Hirer = HirerRepository.GetHirers();
             //var Seeker = SeekerRepository.GetSeekers();
+            bool haveAccount = false;
+
 
             foreach (var Hirer in Hirers)
             {
                 if (Hirer.UserName == textBoxUserName.Text && Hirer.Password == textBoxPassword.Text)
                 {
-                   
+                   haveAccount = true;
                     FormHirerdashboard FormHirerdashboard = new FormHirerdashboard();
 
                     FormHirerdashboard.ShowDialog();
@@ -50,6 +57,30 @@ namespace FreelanceApp
                     
                 }
             }
+
+            foreach (var Seeker in Seekers)
+            {
+                if (Seeker.UserName == textBoxUserName.Text && Seeker.Password == textBoxPassword.Text)
+                {
+                    haveAccount = true;
+
+                    FormSeekerDashboard FormSeekerDashboard = new FormSeekerDashboard();
+
+                    FormSeekerDashboard.ShowDialog();
+                    this.Close();
+
+
+                }
+            }
+
+            if (haveAccount == false)
+            {
+                DialogResult dialogResult = MessageBox.Show("Incorrect User Name or Password!");
+                
+                
+            }
+
+
         }
     }
 }
