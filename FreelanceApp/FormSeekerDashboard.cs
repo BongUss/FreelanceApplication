@@ -14,11 +14,14 @@ namespace FreelanceApp
 {
     public partial class FormSeekerDashboard : Form
     {
+        public int seekerid;
         ProjectRepository projectRepository;
+        ProposalRepository proposalRepository;
         public FormSeekerDashboard()
         {
             InitializeComponent();
             projectRepository = new ProjectRepository();
+            proposalRepository = new ProposalRepository();
         }
 
         private void FormSeekerDashboard_Load(object sender, EventArgs e)
@@ -102,6 +105,72 @@ namespace FreelanceApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, " click row of list job");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewListJob.Visible = false;
+                dataGridViewListProposal.Visible = true;
+                dataGridViewReceivedJobList.Visible = false;
+                clearField();
+                List<Proposal> listP = proposalRepository.getListSubmitedProposal(seekerid);
+                //lọc lại
+                List<dynamic> listSubmitedP = new List<dynamic>();
+                foreach (var item in listP)
+                {
+                    listSubmitedP.Add(new 
+                    {
+                        ProposalId = item.ProposalId,
+                        ProjectId = item.ProjectId,
+                        SeekerId = item.SeekerId,
+                        PaymentAmount = item.PaymentAmount,
+                        Message = item.Message,
+                        Status = item.Status,
+                        CreatedDate  = item.CreatedDate,
+                    });
+                }
+                dataGridViewListProposal.DataSource = null;
+                dataGridViewListProposal.DataSource = listSubmitedP;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "view list subted proposal");
+            }
+        }
+
+        private void btViewReceivedJob_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewListJob.Visible = false;
+                dataGridViewListProposal.Visible = false;
+                dataGridViewReceivedJobList.Visible = true;
+                clearField();
+                List<Proposal> listP = proposalRepository.getListReceivedJob(seekerid);
+                //lọc lại
+                List<dynamic> listReceivedP = new List<dynamic>();
+                foreach (var item in listP)
+                {
+                    listReceivedP.Add(new
+                    {
+                        ProposalId = item.ProposalId,
+                        ProjectId = item.ProjectId,
+                        SeekerId = item.SeekerId,
+                        PaymentAmount = item.PaymentAmount,
+                        Message = item.Message,
+                        Status = item.Status,
+                        CreatedDate = item.CreatedDate,
+                    });
+                }
+                dataGridViewReceivedJobList.DataSource = null;
+                dataGridViewReceivedJobList.DataSource = listReceivedP;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "view list subted proposal");
             }
         }
     }

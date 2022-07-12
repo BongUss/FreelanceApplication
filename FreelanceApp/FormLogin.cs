@@ -64,7 +64,10 @@ namespace FreelanceApp
                 {
                     haveAccount = true;
 
-                    FormSeekerDashboard FormSeekerDashboard = new FormSeekerDashboard();
+                    FormSeekerDashboard FormSeekerDashboard = new FormSeekerDashboard
+                    {
+                        seekerid = Seeker.SeekerId,
+                    };
 
                     FormSeekerDashboard.ShowDialog();
                     this.Close();

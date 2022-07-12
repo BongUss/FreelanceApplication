@@ -31,6 +31,11 @@ namespace DataAccess
             }
         }
 
+        //--lấy skill của project đó cần ra
+        //select projectID, skillName
+        //from NeededSkills nk, Skill s
+        //where projectID = 3 and nk.skillID = s.skillID
+
         public List<Project> getListProject()
         {
             List<Project> listP = new List<Project>();

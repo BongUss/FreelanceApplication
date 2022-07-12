@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,7 @@ namespace DataAccess.repository
 {
     public interface IProposalRepository
     {
+        List<Proposal> getListSubmitedProposal(int seekerid);
+        List<Proposal> getListReceivedJob(int seekerid);
     }
 }

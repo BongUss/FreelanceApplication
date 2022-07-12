@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridViewListJob = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btViewSubmitedProposal = new System.Windows.Forms.Button();
             this.dtpCreateday = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.txtProjectName = new System.Windows.Forms.TextBox();
             this.dataGridViewListProposal = new System.Windows.Forms.DataGridView();
             this.dataGridViewReceivedJobList = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btViewReceivedJob = new System.Windows.Forms.Button();
             this.btViewListJob = new System.Windows.Forms.Button();
             this.dtpExpedtedDay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
@@ -65,14 +65,15 @@
             this.dataGridViewListJob.TabIndex = 0;
             this.dataGridViewListJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListJob_CellClick);
             // 
-            // button1
+            // btViewSubmitedProposal
             // 
-            this.button1.Location = new System.Drawing.Point(578, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "View submited proposal";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btViewSubmitedProposal.Location = new System.Drawing.Point(578, 253);
+            this.btViewSubmitedProposal.Name = "btViewSubmitedProposal";
+            this.btViewSubmitedProposal.Size = new System.Drawing.Size(180, 23);
+            this.btViewSubmitedProposal.TabIndex = 2;
+            this.btViewSubmitedProposal.Text = "View submited proposal";
+            this.btViewSubmitedProposal.UseVisualStyleBackColor = true;
+            this.btViewSubmitedProposal.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtpCreateday
             // 
@@ -215,14 +216,15 @@
             this.dataGridViewReceivedJobList.TabIndex = 54;
             this.dataGridViewReceivedJobList.Visible = false;
             // 
-            // button2
+            // btViewReceivedJob
             // 
-            this.button2.Location = new System.Drawing.Point(578, 314);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 23);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "View  received job";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btViewReceivedJob.Location = new System.Drawing.Point(578, 314);
+            this.btViewReceivedJob.Name = "btViewReceivedJob";
+            this.btViewReceivedJob.Size = new System.Drawing.Size(180, 23);
+            this.btViewReceivedJob.TabIndex = 53;
+            this.btViewReceivedJob.Text = "View  received job";
+            this.btViewReceivedJob.UseVisualStyleBackColor = true;
+            this.btViewReceivedJob.Click += new System.EventHandler(this.btViewReceivedJob_Click);
             // 
             // btViewListJob
             // 
@@ -248,7 +250,7 @@
             this.ClientSize = new System.Drawing.Size(800, 569);
             this.Controls.Add(this.dtpExpedtedDay);
             this.Controls.Add(this.dataGridViewReceivedJobList);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btViewReceivedJob);
             this.Controls.Add(this.dataGridViewListProposal);
             this.Controls.Add(this.dtpCreateday);
             this.Controls.Add(this.label8);
@@ -266,7 +268,7 @@
             this.Controls.Add(this.txtComplexity);
             this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.btViewListJob);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btViewSubmitedProposal);
             this.Controls.Add(this.dataGridViewListJob);
             this.Name = "FormSeekerDashboard";
             this.Text = "FormSeekerDashboard";
@@ -282,7 +284,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewListJob;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btViewSubmitedProposal;
         private System.Windows.Forms.DateTimePicker dtpCreateday;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -300,7 +302,7 @@
         private System.Windows.Forms.TextBox txtProjectName;
         private System.Windows.Forms.DataGridView dataGridViewListProposal;
         private System.Windows.Forms.DataGridView dataGridViewReceivedJobList;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btViewReceivedJob;
         private System.Windows.Forms.Button btViewListJob;
         private System.Windows.Forms.DateTimePicker dtpExpedtedDay;
     }
