@@ -50,9 +50,15 @@
             this.btViewReceivedJob = new System.Windows.Forms.Button();
             this.btViewListJob = new System.Windows.Forms.Button();
             this.dtpExpedtedDay = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHirerID = new System.Windows.Forms.TextBox();
+            this.txtProjectID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewListJob
@@ -61,9 +67,11 @@
             this.dataGridViewListJob.Location = new System.Drawing.Point(23, 187);
             this.dataGridViewListJob.Name = "dataGridViewListJob";
             this.dataGridViewListJob.RowTemplate.Height = 25;
+            this.dataGridViewListJob.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListJob.Size = new System.Drawing.Size(481, 289);
             this.dataGridViewListJob.TabIndex = 0;
             this.dataGridViewListJob.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListJob_CellClick);
+            this.dataGridViewListJob.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListJob_CellContentClick);
             // 
             // btViewSubmitedProposal
             // 
@@ -77,7 +85,7 @@
             // 
             // dtpCreateday
             // 
-            this.dtpCreateday.Location = new System.Drawing.Point(452, 128);
+            this.dtpCreateday.Location = new System.Drawing.Point(444, 138);
             this.dtpCreateday.Name = "dtpCreateday";
             this.dtpCreateday.Size = new System.Drawing.Size(200, 23);
             this.dtpCreateday.TabIndex = 51;
@@ -85,7 +93,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(53, 55);
+            this.label8.Location = new System.Drawing.Point(45, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 15);
             this.label8.TabIndex = 50;
@@ -94,7 +102,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(70, 89);
+            this.label7.Location = new System.Drawing.Point(62, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 15);
             this.label7.TabIndex = 49;
@@ -103,7 +111,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 128);
+            this.label6.Location = new System.Drawing.Point(15, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 15);
             this.label6.TabIndex = 48;
@@ -112,7 +120,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(408, 15);
+            this.label5.Location = new System.Drawing.Point(400, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 47;
@@ -121,7 +129,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(380, 60);
+            this.label4.Location = new System.Drawing.Point(372, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 15);
             this.label4.TabIndex = 46;
@@ -130,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 134);
+            this.label2.Location = new System.Drawing.Point(352, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 44;
@@ -139,7 +147,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(343, 89);
+            this.label3.Location = new System.Drawing.Point(335, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 15);
             this.label3.TabIndex = 45;
@@ -148,7 +156,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 20);
+            this.label1.Location = new System.Drawing.Point(37, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 15);
             this.label1.TabIndex = 43;
@@ -156,42 +164,42 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(128, 52);
+            this.txtDescription.Location = new System.Drawing.Point(120, 62);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 23);
             this.txtDescription.TabIndex = 42;
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(128, 86);
+            this.txtLocation.Location = new System.Drawing.Point(120, 96);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(100, 23);
             this.txtLocation.TabIndex = 41;
             // 
             // txtPaymentAmount
             // 
-            this.txtPaymentAmount.Location = new System.Drawing.Point(128, 125);
+            this.txtPaymentAmount.Location = new System.Drawing.Point(120, 135);
             this.txtPaymentAmount.Name = "txtPaymentAmount";
             this.txtPaymentAmount.Size = new System.Drawing.Size(100, 23);
             this.txtPaymentAmount.TabIndex = 40;
             // 
             // txtMajor
             // 
-            this.txtMajor.Location = new System.Drawing.Point(452, 12);
+            this.txtMajor.Location = new System.Drawing.Point(444, 22);
             this.txtMajor.Name = "txtMajor";
             this.txtMajor.Size = new System.Drawing.Size(100, 23);
             this.txtMajor.TabIndex = 38;
             // 
             // txtComplexity
             // 
-            this.txtComplexity.Location = new System.Drawing.Point(452, 52);
+            this.txtComplexity.Location = new System.Drawing.Point(444, 62);
             this.txtComplexity.Name = "txtComplexity";
             this.txtComplexity.Size = new System.Drawing.Size(100, 23);
             this.txtComplexity.TabIndex = 37;
             // 
             // txtProjectName
             // 
-            this.txtProjectName.Location = new System.Drawing.Point(128, 12);
+            this.txtProjectName.Location = new System.Drawing.Point(120, 22);
             this.txtProjectName.Name = "txtProjectName";
             this.txtProjectName.Size = new System.Drawing.Size(100, 23);
             this.txtProjectName.TabIndex = 36;
@@ -202,6 +210,7 @@
             this.dataGridViewListProposal.Location = new System.Drawing.Point(45, 217);
             this.dataGridViewListProposal.Name = "dataGridViewListProposal";
             this.dataGridViewListProposal.RowTemplate.Height = 25;
+            this.dataGridViewListProposal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListProposal.Size = new System.Drawing.Size(481, 289);
             this.dataGridViewListProposal.TabIndex = 52;
             this.dataGridViewListProposal.Visible = false;
@@ -212,6 +221,7 @@
             this.dataGridViewReceivedJobList.Location = new System.Drawing.Point(71, 253);
             this.dataGridViewReceivedJobList.Name = "dataGridViewReceivedJobList";
             this.dataGridViewReceivedJobList.RowTemplate.Height = 25;
+            this.dataGridViewReceivedJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewReceivedJobList.Size = new System.Drawing.Size(481, 289);
             this.dataGridViewReceivedJobList.TabIndex = 54;
             this.dataGridViewReceivedJobList.Visible = false;
@@ -238,35 +248,85 @@
             // 
             // dtpExpedtedDay
             // 
-            this.dtpExpedtedDay.Location = new System.Drawing.Point(452, 89);
+            this.dtpExpedtedDay.Location = new System.Drawing.Point(444, 99);
             this.dtpExpedtedDay.Name = "dtpExpedtedDay";
             this.dtpExpedtedDay.Size = new System.Drawing.Size(200, 23);
             this.dtpExpedtedDay.TabIndex = 55;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtHirerID);
+            this.groupBox1.Controls.Add(this.txtProjectID);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtProjectName);
+            this.groupBox1.Controls.Add(this.dtpExpedtedDay);
+            this.groupBox1.Controls.Add(this.txtComplexity);
+            this.groupBox1.Controls.Add(this.txtMajor);
+            this.groupBox1.Controls.Add(this.txtPaymentAmount);
+            this.groupBox1.Controls.Add(this.txtLocation);
+            this.groupBox1.Controls.Add(this.dtpCreateday);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Location = new System.Drawing.Point(23, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(765, 169);
+            this.groupBox1.TabIndex = 56;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Job detail";
+            // 
+            // txtHirerID
+            // 
+            this.txtHirerID.Location = new System.Drawing.Point(671, 54);
+            this.txtHirerID.Name = "txtHirerID";
+            this.txtHirerID.Size = new System.Drawing.Size(64, 23);
+            this.txtHirerID.TabIndex = 59;
+            this.txtHirerID.Visible = false;
+            // 
+            // txtProjectID
+            // 
+            this.txtProjectID.Location = new System.Drawing.Point(671, 21);
+            this.txtProjectID.Name = "txtProjectID";
+            this.txtProjectID.Size = new System.Drawing.Size(64, 23);
+            this.txtProjectID.TabIndex = 58;
+            this.txtProjectID.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(612, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 15);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "hirerid";
+            this.label10.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(612, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 15);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "projectid";
+            this.label9.Visible = false;
             // 
             // FormSeekerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 569);
-            this.Controls.Add(this.dtpExpedtedDay);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewReceivedJobList);
             this.Controls.Add(this.btViewReceivedJob);
             this.Controls.Add(this.dataGridViewListProposal);
-            this.Controls.Add(this.dtpCreateday);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtLocation);
-            this.Controls.Add(this.txtPaymentAmount);
-            this.Controls.Add(this.txtMajor);
-            this.Controls.Add(this.txtComplexity);
-            this.Controls.Add(this.txtProjectName);
             this.Controls.Add(this.btViewListJob);
             this.Controls.Add(this.btViewSubmitedProposal);
             this.Controls.Add(this.dataGridViewListJob);
@@ -276,8 +336,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -305,5 +366,10 @@
         private System.Windows.Forms.Button btViewReceivedJob;
         private System.Windows.Forms.Button btViewListJob;
         private System.Windows.Forms.DateTimePicker dtpExpedtedDay;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtHirerID;
+        private System.Windows.Forms.TextBox txtProjectID;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }
