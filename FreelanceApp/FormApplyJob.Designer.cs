@@ -56,6 +56,7 @@
             // 
             // btApplying
             // 
+            this.btApplying.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btApplying.Location = new System.Drawing.Point(168, 168);
             this.btApplying.Name = "btApplying";
             this.btApplying.Size = new System.Drawing.Size(75, 23);
@@ -78,7 +79,7 @@
             // 
             this.txtMessage.Location = new System.Drawing.Point(194, 67);
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(111, 23);
+            this.txtMessage.Size = new System.Drawing.Size(241, 23);
             this.txtMessage.TabIndex = 4;
             // 
             // txtPaymentAmount

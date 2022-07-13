@@ -193,7 +193,10 @@ namespace FreelanceApp
                         proposal1 = proposalApplied,
                         applied = true,
                     };
-                    formApplyJob.Show();
+                    if(formApplyJob.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
                 }
                 else
                 {
@@ -215,7 +218,10 @@ namespace FreelanceApp
                         },
                         seekerid = seekerid,
                     };
-                    formApplyJob.Show();
+                    if (formApplyJob.ShowDialog() == DialogResult.OK)
+                    {
+
+                    }
                 }
             }
             catch (Exception ex)
