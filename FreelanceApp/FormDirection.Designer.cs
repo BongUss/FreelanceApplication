@@ -72,6 +72,7 @@
             this.Controls.Add(this.buttonCreateSeeker);
             this.Controls.Add(this.buttonCreateHirer);
             this.Name = "FormDirection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDirection";
             this.ResumeLayout(false);
             this.PerformLayout();

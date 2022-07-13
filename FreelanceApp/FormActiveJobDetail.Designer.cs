@@ -268,6 +268,7 @@
             this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.textBox1);
             this.Name = "FormActiveJobDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormActiveJobDetail";
             this.ResumeLayout(false);
             this.PerformLayout();

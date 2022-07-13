@@ -219,6 +219,7 @@
             this.Controls.Add(this.textBoxMessage);
             this.Controls.Add(this.textBox1);
             this.Name = "FormSubmitedProposalDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSubmitedProposalDetail";
             this.ResumeLayout(false);
             this.PerformLayout();

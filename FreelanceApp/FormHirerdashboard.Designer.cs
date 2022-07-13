@@ -64,7 +64,6 @@
             this.dataGridViewListPostedJob.RowTemplate.Height = 25;
             this.dataGridViewListPostedJob.Size = new System.Drawing.Size(575, 368);
             this.dataGridViewListPostedJob.TabIndex = 1;
-            
             this.dataGridViewListPostedJob.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListPostedJob_CellDoubleClick);
             // 
             // buttonPostAJob
@@ -289,6 +288,7 @@
             this.Controls.Add(this.dataGridViewAcceptedJob);
             this.Controls.Add(this.dataGridViewListPostedJob);
             this.Name = "FormHirerdashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHirerdashboard";
             this.Load += new System.EventHandler(this.FormHirerdashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPostedJob)).EndInit();

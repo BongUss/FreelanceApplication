@@ -202,6 +202,7 @@ namespace FreelanceApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormSubmitedProposalDetailOfSeeker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSubmitedProposalDetailOfSeeker";
             this.Load += new System.EventHandler(this.FormSubmitedProposalDetailOfSeeker_Load);
             this.ResumeLayout(false);

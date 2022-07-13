@@ -51,12 +51,12 @@
             this.btViewListJob = new System.Windows.Forms.Button();
             this.dtpExpedtedDay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSkillNeed = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtHirerID = new System.Windows.Forms.TextBox();
             this.txtProjectID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtSkillNeed = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).BeginInit();
@@ -287,6 +287,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Job detail";
             // 
+            // txtSkillNeed
+            // 
+            this.txtSkillNeed.Location = new System.Drawing.Point(120, 175);
+            this.txtSkillNeed.Name = "txtSkillNeed";
+            this.txtSkillNeed.Size = new System.Drawing.Size(524, 23);
+            this.txtSkillNeed.TabIndex = 61;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(55, 175);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 15);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Skill need";
+            // 
             // txtHirerID
             // 
             this.txtHirerID.Location = new System.Drawing.Point(671, 54);
@@ -323,22 +339,6 @@
             this.label9.Text = "projectid";
             this.label9.Visible = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(55, 175);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 15);
-            this.label11.TabIndex = 60;
-            this.label11.Text = "Skill need";
-            // 
-            // txtSkillNeed
-            // 
-            this.txtSkillNeed.Location = new System.Drawing.Point(120, 175);
-            this.txtSkillNeed.Name = "txtSkillNeed";
-            this.txtSkillNeed.Size = new System.Drawing.Size(524, 23);
-            this.txtSkillNeed.TabIndex = 61;
-            // 
             // FormSeekerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -352,6 +352,7 @@
             this.Controls.Add(this.btViewSubmitedProposal);
             this.Controls.Add(this.dataGridViewListJob);
             this.Name = "FormSeekerDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormSeekerDashboard";
             this.Load += new System.EventHandler(this.FormSeekerDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).EndInit();

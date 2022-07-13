@@ -243,6 +243,7 @@
             this.Controls.Add(this.textBoxComplexity);
             this.Controls.Add(this.textBoxProjectName);
             this.Name = "FormPostedJobDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPostedJobDetail";
             this.Load += new System.EventHandler(this.FormPostedJobDetail_Load);
             this.ResumeLayout(false);

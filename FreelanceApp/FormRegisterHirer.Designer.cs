@@ -181,6 +181,7 @@
             this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.textBoxLocation);
             this.Name = "FormRegisterHirer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegisterHirer";
             this.ResumeLayout(false);
             this.PerformLayout();

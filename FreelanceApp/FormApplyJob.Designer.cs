@@ -101,6 +101,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormApplyJob";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Apply job";
             this.Load += new System.EventHandler(this.FormApplyJob_Load);
             this.ResumeLayout(false);

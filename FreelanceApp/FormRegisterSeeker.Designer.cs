@@ -223,6 +223,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonRegister);
             this.Name = "FormRegisterSeeker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
             this.Load += new System.EventHandler(this.FormRegisterSeeker_Load);
             this.ResumeLayout(false);
