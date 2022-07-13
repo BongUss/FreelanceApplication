@@ -11,7 +11,6 @@ D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceAp
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormHirerdashboard.resources
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormLogin.resources
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormPostedJobDetail.resources
-D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormProposalDetail.resources
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormRegisterHirer.resources
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormRegisterSeeker.resources
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormSeekerDashboard.resources
@@ -266,3 +265,4 @@ D:\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.dll
 D:\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\ref\FreelanceApp.dll
 D:\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.pdb
 D:\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.genruntimeconfig.cache
+D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormApplyJob.resources

@@ -28,24 +28,6 @@ namespace FreelanceApp
 
         private void FormPostedJobDetail_Load(object sender, EventArgs e)
         {
-            if (InsertOrUpdate == false) //co nghia la insert
-            {
-                buttonWithDraw.Visible = false;
-                dateTimePickerCreatedDate.Value = DateTime.UtcNow.Date;
-                dateTimePickerCreatedDate.Enabled = false;
-
-            }
-            else
-            {
-                buttonWithDraw.Visible = true;
-
-
-            }
-
-            //code cho insert
-            
-
-
             //hien thi list skill len
             List<Skill> ListSkill = SkillRepository.GetSkills();
             string[] StringListSkill = new string[ListSkill.Count];
@@ -58,6 +40,35 @@ namespace FreelanceApp
             }
             checkedListBoxSkill.Items.AddRange(StringListSkill);
             checkedListBoxSkill.CheckOnClick = true;
+
+
+            if (InsertOrUpdate == false) //co nghia la insert
+            {
+                buttonWithDraw.Visible = false;
+                dateTimePickerCreatedDate.Value = DateTime.UtcNow.Date;
+                dateTimePickerCreatedDate.Enabled = false;
+
+            }
+            else //code cho update
+            {
+                buttonWithDraw.Visible = true;
+                textBoxProjectName.Text = Project.ProjectName.ToString();
+                textBoxDescription.Text = Project.Description.ToString();
+                textBoxLocation.Text = Project.Location.ToString();
+                textBoxPaymentAmount.Text = Project.PaymentAmount.ToString();
+                textBoxMajor.Text = Project.Major.ToString();
+                textBoxComplexity.Text = Project.Complexity.ToString();
+                textBoxExpectedDuration.Text = Project.ExpectedDuration.ToString();
+                dateTimePickerCreatedDate.Value = (DateTime)Project.CreatedDate;
+
+                
+            }
+
+            
+
+
+
+            
             
             
             

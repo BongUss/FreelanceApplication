@@ -60,5 +60,43 @@ namespace DataAccess
             }
             return check;
         }
+
+        public Skill GetSkillByProjectID(int ProjectID)
+        {
+            Skill Skill = null;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "SELECT N.skillID, S.skillName FROM NeededSkills N, Skill S WHERE N.projectID = @id AND N.skillID = S.skillID";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@id", ProjectID);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            Skill = new Skill
+                            {
+                                SkillId = reader.GetInt32(0),
+                                SkillName = reader.GetString(1),
+                                
+                            }; 
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return Skill;
+        }
     }
 }

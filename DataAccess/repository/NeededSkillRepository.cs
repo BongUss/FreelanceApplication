@@ -11,5 +11,7 @@ namespace DataAccess.repository
     public class NeededSkillRepository : INeededSkillRepository
     {
         public bool Create(NeededSkill NeededSkill) => NeededSkillDAO.Instance.Create(NeededSkill);
+
+        public Skill GetSkillByProjectID(int ProjectID) => NeededSkillDAO.Instance.GetSkillByProjectID(ProjectID);
     }
 }

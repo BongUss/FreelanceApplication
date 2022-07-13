@@ -10,5 +10,7 @@ namespace DataAccess.repository
     public interface INeededSkillRepository
     {
         bool Create(NeededSkill NeededSkill);
+
+        Skill GetSkillByProjectID(int ProjectID);
     }
 }
