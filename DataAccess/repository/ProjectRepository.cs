@@ -11,6 +11,9 @@ namespace DataAccess.repository
     {
         public bool checkProjectStarted(int projectid) => ProjectDAO.Instance.checkProjectStarted(projectid);
 
+        public bool CreateProject(Project Project) => ProjectDAO.Instance.Create(Project);
+        
+
         public List<Project> getListProject() => ProjectDAO.Instance.getListProject();
     }
 }

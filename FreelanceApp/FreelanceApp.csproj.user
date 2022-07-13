@@ -19,7 +19,7 @@
     <Compile Update="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormPostedJobDetail-post.cs">
+    <Compile Update="FormPostedJobDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormRegisterHirer.cs">

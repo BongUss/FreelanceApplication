@@ -37,16 +37,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.textBoxPaymentAmount = new System.Windows.Forms.TextBox();
+            this.textBoxExpectedDuration = new System.Windows.Forms.TextBox();
+            this.textBoxMajor = new System.Windows.Forms.TextBox();
+            this.textBoxComplexity = new System.Windows.Forms.TextBox();
+            this.textBoxProjectName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerCreateDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerCreatedDate = new System.Windows.Forms.DateTimePicker();
             this.buttonWithDraw = new System.Windows.Forms.Button();
+            this.checkedListBoxSkill = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // button1
@@ -66,6 +67,7 @@
             this.buttonSave.TabIndex = 33;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // label8
             // 
@@ -130,54 +132,54 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Project name";
             // 
-            // textBox9
+            // textBoxDescription
             // 
-            this.textBox9.Location = new System.Drawing.Point(201, 141);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 23);
-            this.textBox9.TabIndex = 25;
+            this.textBoxDescription.Location = new System.Drawing.Point(201, 141);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(100, 23);
+            this.textBoxDescription.TabIndex = 25;
             // 
-            // textBox8
+            // textBoxLocation
             // 
-            this.textBox8.Location = new System.Drawing.Point(201, 211);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 23);
-            this.textBox8.TabIndex = 24;
+            this.textBoxLocation.Location = new System.Drawing.Point(201, 211);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(100, 23);
+            this.textBoxLocation.TabIndex = 24;
             // 
-            // textBox7
+            // textBoxPaymentAmount
             // 
-            this.textBox7.Location = new System.Drawing.Point(201, 288);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 23);
-            this.textBox7.TabIndex = 23;
+            this.textBoxPaymentAmount.Location = new System.Drawing.Point(201, 288);
+            this.textBoxPaymentAmount.Name = "textBoxPaymentAmount";
+            this.textBoxPaymentAmount.Size = new System.Drawing.Size(100, 23);
+            this.textBoxPaymentAmount.TabIndex = 23;
             // 
-            // textBox5
+            // textBoxExpectedDuration
             // 
-            this.textBox5.Location = new System.Drawing.Point(525, 211);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 23);
-            this.textBox5.TabIndex = 22;
+            this.textBoxExpectedDuration.Location = new System.Drawing.Point(525, 211);
+            this.textBoxExpectedDuration.Name = "textBoxExpectedDuration";
+            this.textBoxExpectedDuration.Size = new System.Drawing.Size(100, 23);
+            this.textBoxExpectedDuration.TabIndex = 22;
             // 
-            // textBox3
+            // textBoxMajor
             // 
-            this.textBox3.Location = new System.Drawing.Point(525, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 21;
+            this.textBoxMajor.Location = new System.Drawing.Point(525, 75);
+            this.textBoxMajor.Name = "textBoxMajor";
+            this.textBoxMajor.Size = new System.Drawing.Size(100, 23);
+            this.textBoxMajor.TabIndex = 21;
             // 
-            // textBox2
+            // textBoxComplexity
             // 
-            this.textBox2.Location = new System.Drawing.Point(525, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 20;
+            this.textBoxComplexity.Location = new System.Drawing.Point(525, 141);
+            this.textBoxComplexity.Name = "textBoxComplexity";
+            this.textBoxComplexity.Size = new System.Drawing.Size(100, 23);
+            this.textBoxComplexity.TabIndex = 20;
             // 
-            // textBox1
+            // textBoxProjectName
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 19;
+            this.textBoxProjectName.Location = new System.Drawing.Point(201, 75);
+            this.textBoxProjectName.Name = "textBoxProjectName";
+            this.textBoxProjectName.Size = new System.Drawing.Size(100, 23);
+            this.textBoxProjectName.TabIndex = 19;
             // 
             // label2
             // 
@@ -189,12 +191,12 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "create date";
             // 
-            // dateTimePickerCreateDate
+            // dateTimePickerCreatedDate
             // 
-            this.dateTimePickerCreateDate.Location = new System.Drawing.Point(525, 272);
-            this.dateTimePickerCreateDate.Name = "dateTimePickerCreateDate";
-            this.dateTimePickerCreateDate.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerCreateDate.TabIndex = 35;
+            this.dateTimePickerCreatedDate.Location = new System.Drawing.Point(525, 272);
+            this.dateTimePickerCreatedDate.Name = "dateTimePickerCreatedDate";
+            this.dateTimePickerCreatedDate.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerCreatedDate.TabIndex = 35;
             // 
             // buttonWithDraw
             // 
@@ -205,13 +207,22 @@
             this.buttonWithDraw.Text = "WithDraw";
             this.buttonWithDraw.UseVisualStyleBackColor = true;
             // 
+            // checkedListBoxSkill
+            // 
+            this.checkedListBoxSkill.FormattingEnabled = true;
+            this.checkedListBoxSkill.Location = new System.Drawing.Point(657, 70);
+            this.checkedListBoxSkill.Name = "checkedListBoxSkill";
+            this.checkedListBoxSkill.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBoxSkill.TabIndex = 37;
+            // 
             // FormPostedJobDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkedListBoxSkill);
             this.Controls.Add(this.buttonWithDraw);
-            this.Controls.Add(this.dateTimePickerCreateDate);
+            this.Controls.Add(this.dateTimePickerCreatedDate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label8);
@@ -222,15 +233,16 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDescription);
+            this.Controls.Add(this.textBoxLocation);
+            this.Controls.Add(this.textBoxPaymentAmount);
+            this.Controls.Add(this.textBoxExpectedDuration);
+            this.Controls.Add(this.textBoxMajor);
+            this.Controls.Add(this.textBoxComplexity);
+            this.Controls.Add(this.textBoxProjectName);
             this.Name = "FormPostedJobDetail";
             this.Text = "FormPostedJobDetail";
+            this.Load += new System.EventHandler(this.FormPostedJobDetail_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,15 +259,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.TextBox textBoxPaymentAmount;
+        private System.Windows.Forms.TextBox textBoxExpectedDuration;
+        private System.Windows.Forms.TextBox textBoxMajor;
+        private System.Windows.Forms.TextBox textBoxComplexity;
+        private System.Windows.Forms.TextBox textBoxProjectName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePickerCreateDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCreatedDate;
         private System.Windows.Forms.Button buttonWithDraw;
+        private System.Windows.Forms.CheckedListBox checkedListBoxSkill;
     }
 }

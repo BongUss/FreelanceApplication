@@ -49,7 +49,10 @@ namespace FreelanceApp
                 if (Hirer.UserName == textBoxUserName.Text && Hirer.Password == textBoxPassword.Text)
                 {
                    haveAccount = true;
-                    FormHirerdashboard FormHirerdashboard = new FormHirerdashboard();
+                    FormHirerdashboard FormHirerdashboard = new FormHirerdashboard()
+                    {
+                        HirerId = Hirer.HirerId,
+                    };
 
                     FormHirerdashboard.ShowDialog();
                     this.Close();

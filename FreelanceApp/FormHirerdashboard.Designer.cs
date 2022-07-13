@@ -55,6 +55,7 @@
             this.buttonPostAJob.TabIndex = 2;
             this.buttonPostAJob.Text = "Post A Job";
             this.buttonPostAJob.UseVisualStyleBackColor = true;
+            this.buttonPostAJob.Click += new System.EventHandler(this.buttonPostAJob_Click);
             // 
             // dataGridViewAcceptedJob
             // 
@@ -97,6 +98,7 @@
             this.Controls.Add(this.dataGridViewListPostedJob);
             this.Name = "FormHirerdashboard";
             this.Text = "FormHirerdashboard";
+            this.Load += new System.EventHandler(this.FormHirerdashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPostedJob)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceptedJob)).EndInit();
             this.ResumeLayout(false);

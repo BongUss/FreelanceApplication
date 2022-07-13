@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.repository
 {
-    public interface IProjectRepository
+    public class SkillRepository : ISkillRepository
     {
-        List<Project> getListProject();
-        bool checkProjectStarted(int projectid);
-
-        bool CreateProject(Project Project);
+        public List<Skill> GetSkills() => SkillDAO.Instance.GetSkills();
+        
     }
 }
