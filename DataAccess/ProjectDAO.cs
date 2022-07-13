@@ -81,36 +81,50 @@ namespace DataAccess
             return listP;
         }
 
-        //ham nay ti nua viet sau
-        //public int getProjectID (Project Project)
-        //{
-        //    int id = -1;
-        //    try
-        //    {
-        //        connect = new SqlConnection(connectionString);
-        //        if (connect != null)
-        //        {
-        //            connect.Open();
-        //            string sql = "select * from Proposal where status = 'job started' and projectID = @id";
-        //            commad = new SqlCommand(sql, connect);
-        //            commad.Parameters.AddWithValue("@id", projectid);
-        //            reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-        //            if (reader.HasRows)
-        //            {
-        //                check = true;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        connect.Close();
-        //    }
-        //    return check;
-        //}
+      
+        public int getProjectIDByProject (Project Project)
+        {
+            int id = -1;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "SELECT projectID FROM Project WHERE projectName = @projectName AND hirerID = @hirerID AND location = @location AND paymentAmount = @paymentAmount AND major = @major AND complexity = @complexity AND expectedDuration = @expectedDuration";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@projectName", Project.ProjectName);
+                    
+                    commad.Parameters.AddWithValue("@hirerID", Project.HirerId);
+                    commad.Parameters.AddWithValue("@location", Project.Location);
+                    commad.Parameters.AddWithValue("@paymentAmount", Project.PaymentAmount);
+                    commad.Parameters.AddWithValue("@major", Project.Major);
+                    commad.Parameters.AddWithValue("@complexity", Project.Complexity);
+                    commad.Parameters.AddWithValue("@expectedDuration", Project.ExpectedDuration);
+                    
+
+
+
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            id = reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + "loi o day");
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return id;
+        }
 
         public bool Create(Project Project)
         {

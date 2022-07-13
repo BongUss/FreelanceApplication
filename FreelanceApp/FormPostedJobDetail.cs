@@ -18,6 +18,7 @@ namespace FreelanceApp
         public int HirerId; // id cua nguoi hirer dang nhap vao
         ISkillRepository SkillRepository = new SkillRepository();
         IProjectRepository ProjectRepository = new ProjectRepository();
+        INeededSkillRepository NeededSkillRepository = new NeededSkillRepository();
 
         public FormPostedJobDetail()
         {
@@ -80,7 +81,25 @@ namespace FreelanceApp
                 var selectedSkills = new List<string>();
                 foreach (var skill in checkedListBoxSkill.CheckedItems)
                 {
-                    selectedSkills.Add(skill.ToString());
+                    selectedSkills.Add(skill.ToString()); // cho nay neu nguoi dung ko chon la an cam
+                }
+
+                int ProjectId = ProjectRepository.getProjectIDByProject(Project);
+                bool checkSkill = false;
+                foreach (Skill skill in ListSkill)
+                {
+                    foreach (String selectedSkill in selectedSkills)
+                    {
+                        if (skill.SkillName == selectedSkill)
+                        {
+                            NeededSkill NeededSkill = new NeededSkill
+                            {
+                                ProjectId = ProjectId,
+                                SkillId = skill.SkillId,
+                            };
+                            checkSkill = NeededSkillRepository.Create(NeededSkill);
+                        }
+                    }
                 }
 
 
@@ -88,7 +107,7 @@ namespace FreelanceApp
 
 
 
-                if (check)
+                if (check & checkSkill)
                 {
                     MessageBox.Show("Post a job successfully");
                 }

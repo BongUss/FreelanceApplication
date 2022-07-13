@@ -37,7 +37,8 @@ namespace FreelanceApp
 
         private void FormHirerdashboard_Load(object sender, EventArgs e)
         {
-
+            dataGridViewAcceptedJob.Visible = false;
+            dataGridViewListPostedJob.Visible = true;
         }
     }
 }

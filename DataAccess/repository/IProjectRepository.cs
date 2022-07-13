@@ -13,5 +13,7 @@ namespace DataAccess.repository
         bool checkProjectStarted(int projectid);
 
         bool CreateProject(Project Project);
+
+        int getProjectIDByProject(Project Project);
     }
 }
