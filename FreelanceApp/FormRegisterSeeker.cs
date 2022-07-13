@@ -16,6 +16,7 @@ namespace FreelanceApp
     {
         SeekerRepository seekerRepository;
         SkillRepository skillRepository;
+        List<Skill> listSkill;
 
         public Seeker seeker1;
         public FormRegisterSeeker()
@@ -39,7 +40,7 @@ namespace FreelanceApp
                 txtSchool.Text = seeker1.School;
                 txtUserName.Text = seeker1.UserName;
             }
-            List<Skill> listSkill = skillRepository.GetSkills();
+            listSkill = skillRepository.GetSkills();
             foreach (var item in listSkill)
             {
                 cbSkill.Items.Add(item.SkillName);
@@ -84,7 +85,6 @@ namespace FreelanceApp
 
         public int getSkillID(string skillname)
         {
-            List<Skill> listSkill = skillRepository.GetSkills();
             foreach (var item in listSkill)
             {
                 if (skillname.Equals(item.SkillName))
@@ -139,7 +139,7 @@ namespace FreelanceApp
                             foreach (int index in cbSkill.CheckedIndices)
                             {
                                 int skillid = getSkillID(cbSkill.Items[index].ToString());
-                                if(!skillRepository.addSkill(seeker.SeekerId, skillid))
+                                if(!skillRepository.addSkill(seeker.UserId, skillid))
                                 {
                                     checkAddSkill = true;
                                 }
