@@ -15,6 +15,8 @@ namespace FreelanceApp
     public partial class FormRegisterSeeker : Form
     {
         SeekerRepository seekerRepository;
+        SkillRepository skillRepository;
+
         public Seeker seeker1;
         public FormRegisterSeeker()
         {
@@ -25,6 +27,7 @@ namespace FreelanceApp
         private void FormRegisterSeeker_Load(object sender, EventArgs e)
         {
             seekerRepository = new SeekerRepository();
+            skillRepository = new SkillRepository();
             if(seeker1 != null)
             {
                 txtFullname.Text = seeker1.FullName;
@@ -35,6 +38,11 @@ namespace FreelanceApp
                 txtPwd.Text = seeker1.Password;
                 txtSchool.Text = seeker1.School;
                 txtUserName.Text = seeker1.UserName;
+            }
+            List<Skill> listSkill = skillRepository.GetSkills();
+            foreach (var item in listSkill)
+            {
+                cbSkill.Items.Add(item.SkillName);
             }
         }
 
@@ -130,5 +138,6 @@ namespace FreelanceApp
                 MessageBox.Show(ex.Message, "register seeker");
             }
         }
+
     }
 }
