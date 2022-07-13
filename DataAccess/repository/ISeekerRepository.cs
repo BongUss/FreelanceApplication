@@ -17,5 +17,6 @@ namespace DataAccess.repository
         List<Seeker> GetSeekers();
         List<string> getSkillSeekerHas(int seekerid);
         Seeker GetSeekerByID(int seekerid);
+        List<Seeker> GetListSeekerByid(int seekerid);
     }
 }

@@ -81,6 +81,52 @@ namespace DataAccess
             return ListSeeker;
         }
 
+        public List<Seeker> GetListSeekerByid(int seekerid)
+        {
+            List<Seeker> ListSeeker = new List<Seeker>();
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "SELECT U.UserID, U.userName, U.password, U.balance, U.Phone, U.location, S.seekerID, S.overview, S.school, S.major FROM[User] U, Seeker S WHERE U.UserID = S.seekerID and seekerID = @id";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@id", seekerid);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            ListSeeker.Add(new Seeker
+                            {
+                                UserId = reader.GetInt32(0),
+                                UserName = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                Balance = reader.GetDecimal(3),
+                                Phone = reader.GetString(4),
+                                Location = reader.GetString(5),
+                                SeekerId = reader.GetInt32(6),
+                                Overview = reader.GetString(7),
+                                School = reader.GetString(8),
+                                Major = reader.GetString(9),
+
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return ListSeeker;
+        }
+
         public List<string> getSkillSeekerHas(int seekerid)
         {
             List<string> check = new List<string>();
@@ -118,7 +164,7 @@ namespace DataAccess
 
         public Seeker GetSeekerByID(int seekerid)
         {
-            Seeker Seekerr = null;
+            Seeker Seekerr = new Seeker();
             try
             {
                 connect = new SqlConnection(connectionString);
@@ -137,21 +183,17 @@ namespace DataAccess
                     {
                         while (reader.Read())
                         {
-                            Seekerr = new Seeker
-                            {
-                                UserId = reader.GetInt32(0),
-                                UserName = reader.GetString(1),
-                                Password = reader.GetString(2),
-                                //Balance = reader.GetDecimal(3),
-                                Phone = reader.GetString(4),
-                                Location = reader.GetString(5),
-                                Overview = reader.GetString(6),
-                                School = reader.GetString(7),
-                                Major = reader.GetString(8),
-
-                            };
+                            Seekerr.UserId = reader.GetInt32(0);
+                            Seekerr.UserName = reader.GetString(1);
+                            Seekerr.Password = reader.GetString(2);
+                            Seekerr.Balance = Convert.ToDecimal(reader["balance"]);
+                            Seekerr.Phone = reader.GetString(4);
+                            Seekerr.Location = reader.GetString(5);
+                            Seekerr.Overview = reader.GetString(6);
+                            Seekerr.School = reader.GetString(7);
+                            Seekerr.Major = reader.GetString(8);
                         }
-                        int x = 1;
+                        
                     }
                 }
             }

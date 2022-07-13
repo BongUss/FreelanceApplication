@@ -294,7 +294,7 @@ namespace FreelanceApp
             try
             {
                 seekerRepository = new SeekerRepository();
-                Seeker seeker = seekerRepository.GetSeekerByID(seekerid);
+                Seeker seeker = seekerRepository.GetListSeekerByid(seekerid)[0];
                 FormSeekerProfile formSeekerProfile = new FormSeekerProfile
                 {
                     seeker = seeker

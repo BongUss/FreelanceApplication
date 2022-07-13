@@ -18,6 +18,8 @@ namespace BusinessObject
         public string School { get; set; }
         public string Major { get; set; }
 
+
+
         public virtual User SeekerNavigation { get; set; }
         public virtual ICollection<HasSkill> HasSkills { get; set; }
         public virtual ICollection<Proposal> Proposals { get; set; }
