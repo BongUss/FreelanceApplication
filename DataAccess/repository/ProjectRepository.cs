@@ -17,5 +17,7 @@ namespace DataAccess.repository
         public List<Project> getListProject() => ProjectDAO.Instance.getListProject();
 
         public int getProjectIDByProject(Project Project) => ProjectDAO.Instance.getProjectIDByProject(Project);
+
+        public string getSkillProjectNeed(int projectid) => ProjectDAO.Instance.getSkillProjectNeed(projectid);
     }
 }

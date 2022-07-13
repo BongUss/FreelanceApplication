@@ -15,5 +15,6 @@ namespace DataAccess.repository
         bool CreateProject(Project Project);
 
         int getProjectIDByProject(Project Project);
+        string getSkillProjectNeed(int projectid);
     }
 }

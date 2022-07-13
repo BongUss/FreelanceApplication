@@ -55,6 +55,8 @@
             this.txtProjectID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtSkillNeed = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).BeginInit();
@@ -64,7 +66,7 @@
             // dataGridViewListJob
             // 
             this.dataGridViewListJob.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListJob.Location = new System.Drawing.Point(23, 187);
+            this.dataGridViewListJob.Location = new System.Drawing.Point(12, 230);
             this.dataGridViewListJob.Name = "dataGridViewListJob";
             this.dataGridViewListJob.RowTemplate.Height = 25;
             this.dataGridViewListJob.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -75,7 +77,7 @@
             // 
             // btViewSubmitedProposal
             // 
-            this.btViewSubmitedProposal.Location = new System.Drawing.Point(578, 253);
+            this.btViewSubmitedProposal.Location = new System.Drawing.Point(567, 296);
             this.btViewSubmitedProposal.Name = "btViewSubmitedProposal";
             this.btViewSubmitedProposal.Size = new System.Drawing.Size(180, 23);
             this.btViewSubmitedProposal.TabIndex = 2;
@@ -207,7 +209,7 @@
             // dataGridViewListProposal
             // 
             this.dataGridViewListProposal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListProposal.Location = new System.Drawing.Point(45, 217);
+            this.dataGridViewListProposal.Location = new System.Drawing.Point(34, 260);
             this.dataGridViewListProposal.Name = "dataGridViewListProposal";
             this.dataGridViewListProposal.RowTemplate.Height = 25;
             this.dataGridViewListProposal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -219,7 +221,7 @@
             // dataGridViewReceivedJobList
             // 
             this.dataGridViewReceivedJobList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReceivedJobList.Location = new System.Drawing.Point(71, 253);
+            this.dataGridViewReceivedJobList.Location = new System.Drawing.Point(60, 296);
             this.dataGridViewReceivedJobList.Name = "dataGridViewReceivedJobList";
             this.dataGridViewReceivedJobList.RowTemplate.Height = 25;
             this.dataGridViewReceivedJobList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -229,7 +231,7 @@
             // 
             // btViewReceivedJob
             // 
-            this.btViewReceivedJob.Location = new System.Drawing.Point(578, 314);
+            this.btViewReceivedJob.Location = new System.Drawing.Point(567, 357);
             this.btViewReceivedJob.Name = "btViewReceivedJob";
             this.btViewReceivedJob.Size = new System.Drawing.Size(180, 23);
             this.btViewReceivedJob.TabIndex = 53;
@@ -239,7 +241,7 @@
             // 
             // btViewListJob
             // 
-            this.btViewListJob.Location = new System.Drawing.Point(578, 187);
+            this.btViewListJob.Location = new System.Drawing.Point(567, 230);
             this.btViewListJob.Name = "btViewListJob";
             this.btViewListJob.Size = new System.Drawing.Size(180, 23);
             this.btViewListJob.TabIndex = 2;
@@ -256,6 +258,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSkillNeed);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtHirerID);
             this.groupBox1.Controls.Add(this.txtProjectID);
             this.groupBox1.Controls.Add(this.label10);
@@ -278,7 +282,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(23, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(765, 169);
+            this.groupBox1.Size = new System.Drawing.Size(765, 212);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Job detail";
@@ -319,11 +323,27 @@
             this.label9.Text = "projectid";
             this.label9.Visible = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(55, 175);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 15);
+            this.label11.TabIndex = 60;
+            this.label11.Text = "Skill need";
+            // 
+            // txtSkillNeed
+            // 
+            this.txtSkillNeed.Location = new System.Drawing.Point(120, 175);
+            this.txtSkillNeed.Name = "txtSkillNeed";
+            this.txtSkillNeed.Size = new System.Drawing.Size(524, 23);
+            this.txtSkillNeed.TabIndex = 61;
+            // 
             // FormSeekerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 569);
+            this.ClientSize = new System.Drawing.Size(800, 611);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewReceivedJobList);
             this.Controls.Add(this.btViewReceivedJob);
@@ -372,5 +392,7 @@
         private System.Windows.Forms.TextBox txtProjectID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSkillNeed;
+        private System.Windows.Forms.Label label11;
     }
 }

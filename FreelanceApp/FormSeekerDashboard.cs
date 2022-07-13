@@ -85,6 +85,7 @@ namespace FreelanceApp
             txtMajor.Text = string.Empty;
             txtPaymentAmount.Text = string.Empty;
             txtProjectName.Text = string.Empty;
+            txtSkillNeed.Text = string.Empty;
         }
         private void dataGridViewListJob_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -104,6 +105,9 @@ namespace FreelanceApp
                 txtComplexity.Text = row.Cells[7].Value.ToString();
                 dtpCreateday.Value = DateTime.Parse(row.Cells[9].Value.ToString());
                 dtpExpedtedDay.Value = DateTime.Parse(row.Cells[8].Value.ToString());
+
+                //get skill project need
+                txtSkillNeed.Text = projectRepository.getSkillProjectNeed(int.Parse(row.Cells[0].Value.ToString()));
             }
             catch (Exception ex)
             {

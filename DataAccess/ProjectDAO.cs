@@ -31,11 +31,6 @@ namespace DataAccess
             }
         }
 
-        //--lấy skill của project đó cần ra
-        //select projectID, skillName
-        //from NeededSkills nk, Skill s
-        //where projectID = 3 and nk.skillID = s.skillID
-
         public List<Project> getListProject()
         {
             List<Project> listP = new List<Project>();
@@ -164,7 +159,44 @@ namespace DataAccess
             return check;
         }
 
-
+        public string getSkillProjectNeed(int projectid)
+        {
+            string check = null;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "select projectID, skillName " +
+                        "from NeededSkills nk, Skill s " +
+                        "where projectID = @projectID and nk.skillID = s.skillID";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@projectID", projectid);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                                check += reader.GetString(1) + ", ";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+                if(check != null)
+                {
+                    check = check.Substring(0, check.Length - 2);
+                }
+            }
+            return check;
+        }
 
         public bool checkProjectStarted(int projectid)
         {
