@@ -60,7 +60,52 @@ namespace FreelanceApp
         {
             try
             {
-                
+                //validation
+                if (checkedListBoxSkill.CheckedItems.Count == 0)
+                {
+                    MessageBox.Show("Please check at least one skill!");
+                    return;
+                }
+                if (textBoxProjectName.Text.Length < 5 || textBoxProjectName.Text.Length > 50)
+                {
+                    MessageBox.Show("Please input project name in [5; 50] characters");
+                    return;
+                }
+                if (textBoxDescription.Text.Length < 5 || textBoxDescription.Text.Length > 500)
+                {
+                    MessageBox.Show("Please input project description in [5; 500] characters");
+                    return;
+                }
+                if (textBoxLocation.Text.Length < 5 || textBoxLocation.Text.Length > 50)
+                {
+                    MessageBox.Show("Please input location in [5; 50] characters");
+                    return;
+                }
+                if (Decimal.Parse(textBoxPaymentAmount.Text) < 0 || Decimal.Parse(textBoxPaymentAmount.Text) > 1000)
+                {
+                    MessageBox.Show("The value of payment amount must be in [0; 1000]$");
+                }
+                if (textBoxMajor.Text.Length < 5 || textBoxMajor.Text.Length > 50)
+                {
+                    MessageBox.Show("Please input major in [5; 50] characters");
+                    return;
+                }
+                if (textBoxComplexity.Text.Length < 5 || textBoxComplexity.Text.Length > 50)
+                {
+                    MessageBox.Show("Please input complexity in [5; 50] characters");
+                    return;
+                }
+                if (textBoxExpectedDuration.Text.Length < 5 || textBoxExpectedDuration.Text.Length > 50)
+                {
+                    MessageBox.Show("Please input expecte duration in [5; 50] characters");
+                    return;
+                }
+
+
+
+
+
+
                 //get inf seeker
                 Project Project = new Project
                 {
@@ -110,6 +155,7 @@ namespace FreelanceApp
                 if (check & checkSkill)
                 {
                     MessageBox.Show("Post a job successfully");
+                    this.Close();
                 }
                 
 
@@ -117,6 +163,26 @@ namespace FreelanceApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "post a job - hirer");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBoxPaymentAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

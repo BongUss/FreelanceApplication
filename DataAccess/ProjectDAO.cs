@@ -81,6 +81,8 @@ namespace DataAccess
             return listP;
         }
 
+        //thuc hien query nhung project nao
+
       
         public int getProjectIDByProject (Project Project)
         {
@@ -117,7 +119,7 @@ namespace DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message + "loi o day");
+                throw new Exception(ex.Message);
             }
             finally
             {

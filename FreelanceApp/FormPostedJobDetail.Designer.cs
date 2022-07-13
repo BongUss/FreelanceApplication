@@ -58,6 +58,7 @@
             this.button1.TabIndex = 34;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonSave
             // 
@@ -152,6 +153,7 @@
             this.textBoxPaymentAmount.Name = "textBoxPaymentAmount";
             this.textBoxPaymentAmount.Size = new System.Drawing.Size(100, 23);
             this.textBoxPaymentAmount.TabIndex = 23;
+            this.textBoxPaymentAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPaymentAmount_KeyPress);
             // 
             // textBoxExpectedDuration
             // 

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.repository;
+using BusinessObject;
+using DataAccess.repository;
 
 namespace FreelanceApp
 {
@@ -22,7 +24,50 @@ namespace FreelanceApp
 
         private void buttonViewPostedJob_Click(object sender, EventArgs e)
         {
-            dataGridViewListPostedJob.DataSource = ProjectRepository.getListProject();
+            List<Project> listP = ProjectRepository.getListProject();
+
+            List<Project> listPNotStarted = new List<Project>();    //list này đc nhưng mà nó dư 3 att là hirer, needskill, proposal nên xài list dưới
+            List<dynamic> listPNotStarted1 = new List<dynamic>();
+            foreach (var item in listP)
+            {
+                if (ProjectRepository.checkProjectStarted(item.ProjectId) == false)
+                {
+                    if (item.HirerId == this.HirerId)
+                    {
+                        listPNotStarted.Add(item);
+                        listPNotStarted1.Add(new
+                        {
+                            ProjectId = item.ProjectId,
+                            ProjectName = item.ProjectName,
+                            Description = item.Description,
+                            HirerId = item.HirerId,
+                            Location = item.Location,
+                            PaymentAmount = item.PaymentAmount,
+                            Major = item.Major,
+                            Complexity = item.Complexity,
+                            ExpectedDuration = item.ExpectedDuration,
+                            CreatedDate = item.CreatedDate
+                        });
+                    }
+                }
+            }
+
+            if (listPNotStarted1.Count != 0)
+            {
+                dataGridViewListPostedJob.DataSource = listPNotStarted1;
+
+            }
+            else
+            {
+                MessageBox.Show("No item in the list");
+
+            }
+
+
+
+
+
+
         }
 
         private void buttonPostAJob_Click(object sender, EventArgs e)
