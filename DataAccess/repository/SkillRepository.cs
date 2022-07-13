@@ -9,6 +9,8 @@ namespace DataAccess.repository
 {
     public class SkillRepository : ISkillRepository
     {
+        public bool addSkill(int seekerid, int skillid) => SkillDAO.Instance.addSkill(seekerid, skillid);
+
         public List<Skill> GetSkills() => SkillDAO.Instance.GetSkills();
         
     }

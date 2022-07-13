@@ -82,6 +82,19 @@ namespace FreelanceApp
             };
         }
 
+        public int getSkillID(string skillname)
+        {
+            List<Skill> listSkill = skillRepository.GetSkills();
+            foreach (var item in listSkill)
+            {
+                if (skillname.Equals(item.SkillName))
+                {
+                    return item.SkillId;
+                }
+            }
+            return -1;
+        }
+
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             try
@@ -114,13 +127,31 @@ namespace FreelanceApp
                 }
                 else
                 {
+                    //tao user
                     if (seekerRepository.createUser(seeker))
                     {
-
+                        //tạo seeker
                         seeker.UserId = seekerRepository.getSeekerId(seeker);
                         if (seekerRepository.createSeeker(seeker))
                         {
-                            MessageBox.Show("create seeker success", "register seeker");
+                            //them skill cho seeker
+                            bool checkAddSkill = false;
+                            foreach (int index in cbSkill.CheckedIndices)
+                            {
+                                int skillid = getSkillID(cbSkill.Items[index].ToString());
+                                if(!skillRepository.addSkill(seeker.SeekerId, skillid))
+                                {
+                                    checkAddSkill = true;
+                                }
+                            }
+                            if (checkAddSkill)
+                            {
+                                MessageBox.Show("add skill seeker fail", "register seeker");
+                            }
+                            else
+                            {
+                                MessageBox.Show("create seeker success", "register seeker");
+                            }
                         }
                         else
                         {

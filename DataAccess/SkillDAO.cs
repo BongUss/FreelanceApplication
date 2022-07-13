@@ -68,5 +68,33 @@ namespace DataAccess
             return ListSkill;
         }
 
+        public bool addSkill(int seekerid, int skillid)
+        {
+            bool check = false;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "insert into HasSkill(seekerID, skillID) " +
+                        "values(@seid, @skid)";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@seid", seekerid);
+                    commad.Parameters.AddWithValue("@skid", skillid);
+                    check = commad.ExecuteNonQuery() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return check;
+        }
+
     }
 }

@@ -10,5 +10,6 @@ namespace DataAccess.repository
     public interface ISkillRepository
     {
         List<Skill> GetSkills();
+        bool addSkill(int seekerid, int skillid);
     }
 }
