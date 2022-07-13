@@ -16,6 +16,7 @@ namespace FreelanceApp
     {
         public bool InsertOrUpdate; //true co nghia la update
         public int HirerId; // id cua nguoi hirer dang nhap vao
+        public Project Project; //dung khi update mot Project, dua thong tin cua Project do qua
         ISkillRepository SkillRepository = new SkillRepository();
         IProjectRepository ProjectRepository = new ProjectRepository();
         INeededSkillRepository NeededSkillRepository = new NeededSkillRepository();
@@ -27,14 +28,22 @@ namespace FreelanceApp
 
         private void FormPostedJobDetail_Load(object sender, EventArgs e)
         {
-            if (InsertOrUpdate == false)
+            if (InsertOrUpdate == false) //co nghia la insert
             {
                 buttonWithDraw.Visible = false;
+                dateTimePickerCreatedDate.Value = DateTime.UtcNow.Date;
+                dateTimePickerCreatedDate.Enabled = false;
+
+            }
+            else
+            {
+                buttonWithDraw.Visible = true;
+
+
             }
 
             //code cho insert
-            dateTimePickerCreatedDate.Value = DateTime.UtcNow.Date;
-            dateTimePickerCreatedDate.Enabled = false;
+            
 
 
             //hien thi list skill len
@@ -60,103 +69,110 @@ namespace FreelanceApp
         {
             try
             {
-                //validation
-                if (checkedListBoxSkill.CheckedItems.Count == 0)
+                if (InsertOrUpdate == false)
                 {
-                    MessageBox.Show("Please check at least one skill!");
-                    return;
-                }
-                if (textBoxProjectName.Text.Length < 5 || textBoxProjectName.Text.Length > 50)
-                {
-                    MessageBox.Show("Please input project name in [5; 50] characters");
-                    return;
-                }
-                if (textBoxDescription.Text.Length < 5 || textBoxDescription.Text.Length > 500)
-                {
-                    MessageBox.Show("Please input project description in [5; 500] characters");
-                    return;
-                }
-                if (textBoxLocation.Text.Length < 5 || textBoxLocation.Text.Length > 50)
-                {
-                    MessageBox.Show("Please input location in [5; 50] characters");
-                    return;
-                }
-                if (Decimal.Parse(textBoxPaymentAmount.Text) < 0 || Decimal.Parse(textBoxPaymentAmount.Text) > 1000)
-                {
-                    MessageBox.Show("The value of payment amount must be in [0; 1000]$");
-                }
-                if (textBoxMajor.Text.Length < 5 || textBoxMajor.Text.Length > 50)
-                {
-                    MessageBox.Show("Please input major in [5; 50] characters");
-                    return;
-                }
-                if (textBoxComplexity.Text.Length < 5 || textBoxComplexity.Text.Length > 50)
-                {
-                    MessageBox.Show("Please input complexity in [5; 50] characters");
-                    return;
-                }
-                if (textBoxExpectedDuration.Text.Length < 5 || textBoxExpectedDuration.Text.Length > 50)
-                {
-                    MessageBox.Show("Please input expecte duration in [5; 50] characters");
-                    return;
-                }
-
-
-
-
-
-
-                //get inf seeker
-                Project Project = new Project
-                {
-                    ProjectName = textBoxProjectName.Text,
-                    Description = textBoxDescription.Text,
-                    HirerId = this.HirerId,
-                    Location = textBoxLocation.Text,
-                    PaymentAmount = Decimal.Parse(textBoxPaymentAmount.Text),
-                    Major = textBoxMajor.Text,
-                    Complexity = textBoxComplexity.Text,
-                    ExpectedDuration = textBoxExpectedDuration.Text,
-                    CreatedDate = DateTime.UtcNow.Date,
-                };
-                bool check = ProjectRepository.CreateProject(Project);
-
-                List<Skill> ListSkill = SkillRepository.GetSkills(); // lay duoc tat cac skill
-
-                var selectedSkills = new List<string>();
-                foreach (var skill in checkedListBoxSkill.CheckedItems)
-                {
-                    selectedSkills.Add(skill.ToString()); // cho nay neu nguoi dung ko chon la an cam
-                }
-
-                int ProjectId = ProjectRepository.getProjectIDByProject(Project);
-                bool checkSkill = false;
-                foreach (Skill skill in ListSkill)
-                {
-                    foreach (String selectedSkill in selectedSkills)
+                    if (checkedListBoxSkill.CheckedItems.Count == 0)
                     {
-                        if (skill.SkillName == selectedSkill)
+                        MessageBox.Show("Please check at least one skill!");
+                        return;
+                    }
+                    if (textBoxProjectName.Text.Length < 5 || textBoxProjectName.Text.Length > 50)
+                    {
+                        MessageBox.Show("Please input project name in [5; 50] characters");
+                        return;
+                    }
+                    if (textBoxDescription.Text.Length < 5 || textBoxDescription.Text.Length > 500)
+                    {
+                        MessageBox.Show("Please input project description in [5; 500] characters");
+                        return;
+                    }
+                    if (textBoxLocation.Text.Length < 5 || textBoxLocation.Text.Length > 50)
+                    {
+                        MessageBox.Show("Please input location in [5; 50] characters");
+                        return;
+                    }
+                    if (Decimal.Parse(textBoxPaymentAmount.Text) < 0 || Decimal.Parse(textBoxPaymentAmount.Text) > 1000)
+                    {
+                        MessageBox.Show("The value of payment amount must be in [0; 1000]$");
+                    }
+                    if (textBoxMajor.Text.Length < 5 || textBoxMajor.Text.Length > 50)
+                    {
+                        MessageBox.Show("Please input major in [5; 50] characters");
+                        return;
+                    }
+                    if (textBoxComplexity.Text.Length < 5 || textBoxComplexity.Text.Length > 50)
+                    {
+                        MessageBox.Show("Please input complexity in [5; 50] characters");
+                        return;
+                    }
+                    if (textBoxExpectedDuration.Text.Length < 5 || textBoxExpectedDuration.Text.Length > 50)
+                    {
+                        MessageBox.Show("Please input expecte duration in [5; 50] characters");
+                        return;
+                    }
+
+
+
+
+
+
+                    //get inf seeker
+                    Project Project = new Project
+                    {
+                        ProjectName = textBoxProjectName.Text,
+                        Description = textBoxDescription.Text,
+                        HirerId = this.HirerId,
+                        Location = textBoxLocation.Text,
+                        PaymentAmount = Decimal.Parse(textBoxPaymentAmount.Text),
+                        Major = textBoxMajor.Text,
+                        Complexity = textBoxComplexity.Text,
+                        ExpectedDuration = textBoxExpectedDuration.Text,
+                        CreatedDate = DateTime.UtcNow.Date,
+                    };
+                    bool check = ProjectRepository.CreateProject(Project);
+
+                    List<Skill> ListSkill = SkillRepository.GetSkills(); // lay duoc tat cac skill
+
+                    var selectedSkills = new List<string>();
+                    foreach (var skill in checkedListBoxSkill.CheckedItems)
+                    {
+                        selectedSkills.Add(skill.ToString()); // cho nay neu nguoi dung ko chon la an cam
+                    }
+
+                    int ProjectId = ProjectRepository.getProjectIDByProject(Project);
+                    bool checkSkill = false;
+                    foreach (Skill skill in ListSkill)
+                    {
+                        foreach (String selectedSkill in selectedSkills)
                         {
-                            NeededSkill NeededSkill = new NeededSkill
+                            if (skill.SkillName == selectedSkill)
                             {
-                                ProjectId = ProjectId,
-                                SkillId = skill.SkillId,
-                            };
-                            checkSkill = NeededSkillRepository.Create(NeededSkill);
+                                NeededSkill NeededSkill = new NeededSkill
+                                {
+                                    ProjectId = ProjectId,
+                                    SkillId = skill.SkillId,
+                                };
+                                checkSkill = NeededSkillRepository.Create(NeededSkill);
+                            }
                         }
                     }
+
+
+
+
+
+
+                    if (check & checkSkill)
+                    {
+                        MessageBox.Show("Post a job successfully");
+                        this.Close();
+                    }
                 }
-
-
-
-
-
-
-                if (check & checkSkill)
+                else // update
                 {
-                    MessageBox.Show("Post a job successfully");
-                    this.Close();
+
                 }
+                
                 
 
             }
