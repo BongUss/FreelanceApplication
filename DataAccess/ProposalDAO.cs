@@ -150,5 +150,45 @@ namespace DataAccess
             }
             return check;
         }
+
+        public Proposal getJobApply(int projectid, int seekerid)
+        {
+            Proposal proposal = null;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "select paymentAmount, message " +
+                        "from Proposal " +
+                        "where projectID = @proid and seekerID = @seekerid";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@proid", projectid);
+                    commad.Parameters.AddWithValue("@seekerid", seekerid);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            proposal = new Proposal
+                            {
+                                PaymentAmount = reader.GetDecimal(0),
+                                Message = reader.GetString(1)
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return proposal;
+        }
     }
 }

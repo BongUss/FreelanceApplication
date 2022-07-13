@@ -33,6 +33,7 @@ namespace FreelanceApp
         {
             try
             {
+                clearField();
                 dataGridViewListJob.Visible = true;
                 dataGridViewListProposal.Visible = false;
                 dataGridViewReceivedJobList.Visible = false;
@@ -181,24 +182,41 @@ namespace FreelanceApp
             try
             {
                 DataGridViewRow row = dataGridViewListJob.Rows[e.RowIndex];
-                FormApplyJob formApplyJob = new FormApplyJob
+
+                //check xem seeker apply chua
+                Proposal proposalApplied = proposalRepository.getJobApply(int.Parse(row.Cells[0].Value.ToString()), seekerid);
+                if (proposalApplied != null)
                 {
-                    project = new Project
+                    //đã gửi apply r
+                    FormApplyJob formApplyJob = new FormApplyJob
                     {
-                        ProjectId = int.Parse(row.Cells[0].Value.ToString()),
-                        ProjectName = row.Cells[1].Value.ToString(),
-                        Description = row.Cells[2].Value.ToString(),
-                        HirerId = int.Parse(row.Cells[3].Value.ToString()),
-                        Location = row.Cells[4].Value.ToString(),
-                        PaymentAmount = decimal.Parse(row.Cells[5].Value.ToString()),
-                        Major = row.Cells[6].Value.ToString(),
-                        Complexity = row.Cells[7].Value.ToString(),
-                        CreatedDate = DateTime.Parse(row.Cells[9].Value.ToString()),
-                        ExpectedDuration = DateTime.Parse(row.Cells[8].Value.ToString()) + "",
-                    },
-                    seekerid = seekerid,
-                };
-                formApplyJob.Show();
+                        proposal1 = proposalApplied,
+                        applied = true,
+                    };
+                    formApplyJob.Show();
+                }
+                else
+                {
+                    //chua gui đơn apply
+                    FormApplyJob formApplyJob = new FormApplyJob
+                    {
+                        project = new Project
+                        {
+                            ProjectId = int.Parse(row.Cells[0].Value.ToString()),
+                            ProjectName = row.Cells[1].Value.ToString(),
+                            Description = row.Cells[2].Value.ToString(),
+                            HirerId = int.Parse(row.Cells[3].Value.ToString()),
+                            Location = row.Cells[4].Value.ToString(),
+                            PaymentAmount = decimal.Parse(row.Cells[5].Value.ToString()),
+                            Major = row.Cells[6].Value.ToString(),
+                            Complexity = row.Cells[7].Value.ToString(),
+                            CreatedDate = DateTime.Parse(row.Cells[9].Value.ToString()),
+                            ExpectedDuration = DateTime.Parse(row.Cells[8].Value.ToString()) + "",
+                        },
+                        seekerid = seekerid,
+                    };
+                    formApplyJob.Show();
+                }
             }
             catch (Exception ex)
             {

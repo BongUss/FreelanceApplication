@@ -19,6 +19,9 @@ namespace FreelanceApp
         ProposalRepository proposalRepository;
         public int seekerid;
 
+        public bool applied = false;
+        public Proposal proposal1;
+
         public FormApplyJob()
         {
             InitializeComponent();
@@ -27,6 +30,14 @@ namespace FreelanceApp
         private void FormApplyJob_Load(object sender, EventArgs e)
         {
             proposalRepository = new ProposalRepository();
+            if(applied == true)
+            {
+                txtMessage.Text = proposal1.Message;
+                txtPaymentAmount.Text = proposal1.PaymentAmount.ToString();
+                txtMessage.Enabled = false;
+                txtPaymentAmount.Enabled = false;
+                btApplying.Enabled = false;
+            }
         }
 
         private void btApplying_Click(object sender, EventArgs e)
