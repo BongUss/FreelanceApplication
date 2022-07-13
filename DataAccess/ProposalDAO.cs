@@ -42,7 +42,7 @@ namespace DataAccess
                     string sql = "select proposalID, projectID, seekerID,  " +
                         "paymentAmount, status, createdDate, message " +
                         "from Proposal " +
-                        "where seekerID = @id and status = 'job sent'";
+                        "where seekerID = @id and status = 'proposal sent'";
                     commad = new SqlCommand(sql, connect);
                     commad.Parameters.AddWithValue("@id", seekerid);
                     reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
@@ -52,8 +52,8 @@ namespace DataAccess
                         {
                             listP.Add(new Proposal
                             {
-                                ProjectId = reader.GetInt32(0),
-                                ProposalId = reader.GetInt32(1),
+                                ProposalId = reader.GetInt32(0),
+                                ProjectId = reader.GetInt32(1),
                                 SeekerId = reader.GetInt32(2),
                                 PaymentAmount = reader.GetDecimal(3),
                                 Status = reader.GetString(4),
@@ -118,6 +118,37 @@ namespace DataAccess
                 connect.Close();
             }
             return listP;
+        }
+
+        public bool createProposal(Proposal proposal)
+        {
+            bool check = false;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "insert into Proposal(projectID, seekerID, paymentAmount, status, message) " +
+                        "values(@projectID, @seekerID, @paymentAmount, @status, @message)";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@projectID", proposal.ProjectId);
+                    commad.Parameters.AddWithValue("@seekerID", proposal.SeekerId);
+                    commad.Parameters.AddWithValue("@paymentAmount", proposal.PaymentAmount);
+                    commad.Parameters.AddWithValue("@status", proposal.Status);
+                    commad.Parameters.AddWithValue("@message", proposal.Message);
+                    check = commad.ExecuteNonQuery() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return check;
         }
     }
 }

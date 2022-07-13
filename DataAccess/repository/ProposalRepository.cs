@@ -9,6 +9,7 @@ namespace DataAccess.repository
 {
     public class ProposalRepository : IProposalRepository
     {
+        public bool createProposal(Proposal proposal) => ProposalDAO.Instance.createProposal(proposal);
         public List<Proposal> getListReceivedJob(int seekerid) => ProposalDAO.Instance.getListReceivedJob(seekerid);
 
         public List<Proposal> getListSubmitedProposal(int seekerid) => ProposalDAO.Instance.getListSubmitedProposal(seekerid);
