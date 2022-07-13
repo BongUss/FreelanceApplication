@@ -31,6 +31,9 @@
     <Compile Update="FormSeekerDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormSeekerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormSubmitedProposalDetail.cs">
       <SubType>Form</SubType>
     </Compile>

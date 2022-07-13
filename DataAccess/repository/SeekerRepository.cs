@@ -15,9 +15,12 @@ namespace DataAccess.repository
 
         public bool createUser(Seeker seeker) => UserDAO.Instance.createUser(seeker);
 
+        public Seeker GetSeekerByID(int seekerid) => SeekerDAO.Instance.GetSeekerByID(seekerid);
+
         public int getSeekerId(Seeker seeker) => UserDAO.Instance.getSeekerId(seeker);
 
         public List<Seeker> GetSeekers() => SeekerDAO.Instance.GetListSeeker();
-        
+
+        public List<string> getSkillSeekerHas(int seekerid) => SeekerDAO.Instance.getSkillSeekerHas(seekerid);
     }
 }

@@ -267,3 +267,4 @@ D:\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.genru
 D:\github\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormApplyJob.resources
 D:\laptrinh-dotnet\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormApplyJob.resources
 D:\laptrinh-dotnet\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormSubmitedProposalDetailOfSeeker.resources
+D:\laptrinh-dotnet\FreelanceApplication\FreelanceApp\obj\Debug\net5.0-windows\FreelanceApp.FormSeekerProfile.resources

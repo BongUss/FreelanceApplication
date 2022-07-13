@@ -57,6 +57,7 @@
             this.txtProjectID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btViewProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListJob)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListProposal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceivedJobList)).BeginInit();
@@ -339,11 +340,22 @@
             this.label9.Text = "projectid";
             this.label9.Visible = false;
             // 
+            // btViewProfile
+            // 
+            this.btViewProfile.Location = new System.Drawing.Point(567, 412);
+            this.btViewProfile.Name = "btViewProfile";
+            this.btViewProfile.Size = new System.Drawing.Size(180, 23);
+            this.btViewProfile.TabIndex = 57;
+            this.btViewProfile.Text = "View Profile";
+            this.btViewProfile.UseVisualStyleBackColor = true;
+            this.btViewProfile.Click += new System.EventHandler(this.btViewProfile_Click);
+            // 
             // FormSeekerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 611);
+            this.Controls.Add(this.btViewProfile);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewReceivedJobList);
             this.Controls.Add(this.btViewReceivedJob);
@@ -395,5 +407,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSkillNeed;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btViewProfile;
     }
 }

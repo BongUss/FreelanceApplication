@@ -81,5 +81,89 @@ namespace DataAccess
             return ListSeeker;
         }
 
+        public List<string> getSkillSeekerHas(int seekerid)
+        {
+            List<string> check = new List<string>();
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "select hs.seekerID, skillName " +
+                        "from HasSkill hs, Skill s " +
+                        "where seekerID = @seid and hs.skillID = s.skillID";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@seid", seekerid);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            check.Add(reader.GetString(1));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return check;
+        }
+
+        public Seeker GetSeekerByID(int seekerid)
+        {
+            Seeker Seekerr = null;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "select u.userID, u.userName, u.password, u.fullName, u.balance, " +
+                        "u.phone, u.location, s.overview, s.school, s.major " +
+                        "from[User] u, Seeker s " +
+                        "where u.userID = s.seekerID " +
+                        "and userID = @id";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@id", seekerid);
+                    reader = commad.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Seekerr = new Seeker
+                            {
+                                UserId = reader.GetInt32(0),
+                                UserName = reader.GetString(1),
+                                Password = reader.GetString(2),
+                                //Balance = reader.GetDecimal(3),
+                                Phone = reader.GetString(4),
+                                Location = reader.GetString(5),
+                                Overview = reader.GetString(6),
+                                School = reader.GetString(7),
+                                Major = reader.GetString(8),
+
+                            };
+                        }
+                        int x = 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return Seekerr;
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace FreelanceApp
         public int seekerid;
         ProjectRepository projectRepository;
         ProposalRepository proposalRepository;
+        SeekerRepository seekerRepository;
         public FormSeekerDashboard()
         {
             InitializeComponent();
@@ -285,6 +286,23 @@ namespace FreelanceApp
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "click row submited proposal");
+            }
+        }
+
+        private void btViewProfile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                seekerRepository = new SeekerRepository();
+                Seeker seeker = seekerRepository.GetSeekerByID(seekerid);
+                FormSeekerProfile formSeekerProfile = new FormSeekerProfile
+                {
+                    seeker = seeker
+                };
+                formSeekerProfile.ShowDialog();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "view profile");
             }
         }
     }
