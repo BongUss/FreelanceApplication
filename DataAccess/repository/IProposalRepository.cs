@@ -13,5 +13,7 @@ namespace DataAccess.repository
         List<Proposal> getListReceivedJob(int seekerid);
         bool createProposal(Proposal proposal);
         Proposal getJobApply(int projectid, int seekerid);
+        bool deleteProposal(Proposal proposal);
+
     }
 }

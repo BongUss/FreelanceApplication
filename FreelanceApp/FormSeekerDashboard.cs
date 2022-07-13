@@ -230,5 +230,58 @@ namespace FreelanceApp
             }
         }
 
+        private void dataGridViewListProposal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                clearField();
+                if (e.RowIndex == -1) return;
+                DataGridViewRow row = dataGridViewListProposal.Rows[e.RowIndex];
+                Proposal proposalDetail = new Proposal
+                {
+                    ProposalId = int.Parse(row.Cells[0].Value.ToString()),
+                    ProjectId = int.Parse(row.Cells[1].Value.ToString()),
+                    SeekerId = int.Parse(row.Cells[2].Value.ToString()),
+                    PaymentAmount = decimal.Parse(row.Cells[3].Value.ToString()),
+                    Message = row.Cells[4].Value.ToString(),
+                    Status = row.Cells[5].Value.ToString(),
+                    CreatedDate = DateTime.Parse(row.Cells[6].Value.ToString()),
+                };
+                FormSubmitedProposalDetailOfSeeker formSubmitedProposalDetailOfSeeker = new FormSubmitedProposalDetailOfSeeker
+                {
+                    proposal = proposalDetail
+                };
+                if(formSubmitedProposalDetailOfSeeker.ShowDialog() == DialogResult.OK)
+                {
+                    //load list again
+                    dataGridViewListJob.Visible = false;
+                    dataGridViewListProposal.Visible = true;
+                    dataGridViewReceivedJobList.Visible = false;
+                    clearField();
+                    List<Proposal> listP = proposalRepository.getListSubmitedProposal(seekerid);
+                    //lọc lại
+                    List<dynamic> listSubmitedP = new List<dynamic>();
+                    foreach (var item in listP)
+                    {
+                        listSubmitedP.Add(new
+                        {
+                            ProposalId = item.ProposalId,
+                            ProjectId = item.ProjectId,
+                            SeekerId = item.SeekerId,
+                            PaymentAmount = item.PaymentAmount,
+                            Message = item.Message,
+                            Status = item.Status,
+                            CreatedDate = item.CreatedDate,
+                        });
+                    }
+                    dataGridViewListProposal.DataSource = null;
+                    dataGridViewListProposal.DataSource = listSubmitedP;
+                }
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "click row submited proposal");
+            }
+        }
     }
 }

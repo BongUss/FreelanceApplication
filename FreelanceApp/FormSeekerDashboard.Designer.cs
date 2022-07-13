@@ -214,6 +214,7 @@
             this.dataGridViewListProposal.Size = new System.Drawing.Size(481, 289);
             this.dataGridViewListProposal.TabIndex = 52;
             this.dataGridViewListProposal.Visible = false;
+            this.dataGridViewListProposal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewListProposal_CellContentClick);
             // 
             // dataGridViewReceivedJobList
             // 

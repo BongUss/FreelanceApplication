@@ -11,6 +11,8 @@ namespace DataAccess.repository
     {
         public bool createProposal(Proposal proposal) => ProposalDAO.Instance.createProposal(proposal);
 
+        public bool deleteProposal(Proposal proposal) => ProposalDAO.Instance.deleteProposal(proposal);
+
         public Proposal getJobApply(int projectid, int seekerid) => ProposalDAO.Instance.getJobApply(projectid, seekerid);
 
         public List<Proposal> getListReceivedJob(int seekerid) => ProposalDAO.Instance.getListReceivedJob(seekerid);

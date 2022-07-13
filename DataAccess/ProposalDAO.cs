@@ -190,5 +190,33 @@ namespace DataAccess
             }
             return proposal;
         }
+
+        public bool deleteProposal(Proposal proposal)
+        {
+            bool check = false;
+            try
+            {
+                connect = new SqlConnection(connectionString);
+                if (connect != null)
+                {
+                    connect.Open();
+                    string sql = "delete Proposal " +
+                        "where projectID = @projectID and seekerID = @seekerID";
+                    commad = new SqlCommand(sql, connect);
+                    commad.Parameters.AddWithValue("@projectID", proposal.ProjectId);
+                    commad.Parameters.AddWithValue("@seekerID", proposal.SeekerId);
+                    check = commad.ExecuteNonQuery() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                connect.Close();
+            }
+            return check;
+        }
     }
 }
